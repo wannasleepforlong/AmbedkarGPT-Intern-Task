@@ -5,7 +5,7 @@ from langchain_ollama import OllamaEmbeddings, ChatOllama
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 
-
+ 
 VECTORDB_DIR = "./chroma_db"
 SPEECH_FILE = "speech.txt"
 
