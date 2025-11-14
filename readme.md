@@ -93,7 +93,7 @@ python main.py
 On the first run, the system will:
 - Load `speech.txt`
 - Split text into chunks
-- Create embeddings (takes 1-2 minutes)
+- Create embeddings 
 - Store in `./chroma_db` directory
 
 Subsequent runs load the vector database instantly.
@@ -156,4 +156,5 @@ User questions are embedded and compared against stored chunks using semantic si
 
 ### Answer Generation
 Retrieved chunks and the question are sent to Mistral 7B LLM with a prompt that instructs it to answer only from the provided context, preventing hallucinations.
+
 
