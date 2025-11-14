@@ -98,35 +98,6 @@ On the first run, the system will:
 
 Subsequent runs load the vector database instantly.
 
-### Example Session
-
-```
-============================================================
-Welcome to AmbedkarGPT
-
-Type your questions or 'quit' to exit
-
-============================================================
-Question: What is the real remedy according to Ambedkar?
-
-============================================================
-Retrieved 2 relevant chunks
-Generating answer with LLM...
-
-────────────────────────────────────────────────────────────
-Answer:
-────────────────────────────────────────────────────────────
-The real remedy, according to Ambedkar, is to destroy the 
-belief in the sanctity of the shastras. He argues that you 
-must take a stand against the scriptures and that as long 
-as people believe in the shastras, they will never be able 
-to get rid of caste.
-────────────────────────────────────────────────────────────
-
-Question: quit
-```
-
-### Exiting
 Type `quit`, `exit`, or `q` to exit the application.
 
 ## Configuration
@@ -166,43 +137,6 @@ llm = ChatOllama(model="llama2")
 4. What is the real enemy according to the text?
 5. Can you have both caste and belief in shastras?
 
-## Troubleshooting
-
-### Problem: "Ollama not found" or connection error
-
-**Solution:**
-```bash
-ollama serve
-```
-
-In another terminal:
-```bash
-ollama run mistral "Hello"
-```
-
-### Problem: "Model 'mistral' not found"
-
-**Solution:**
-```bash
-ollama pull mistral
-ollama list
-```
-
-### Problem: "speech.txt not found"
-
-**Solution:** Ensure `speech.txt` is in the same directory as `main.py`
-
-### Problem: Slow first run
-
-This is normal. The first run downloads the HuggingFace embedding model and creates the vector database. Subsequent runs are fast.
-
-### Problem: Import errors
-
-**Solution:**
-```bash
-pip install -r requirements.txt --force-reinstall
-```
-
 ## How It Works
 
 ### Document Loading
@@ -222,7 +156,3 @@ User questions are embedded and compared against stored chunks using semantic si
 
 ### Answer Generation
 Retrieved chunks and the question are sent to Mistral 7B LLM with a prompt that instructs it to answer only from the provided context, preventing hallucinations.
-
-## License
-
-This project is created as part of an internship assignment.
