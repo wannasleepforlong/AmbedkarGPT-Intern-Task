@@ -46,7 +46,7 @@ ollama list
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/yourusername/AmbedkarGPT-Intern-Task.git
+git clone https://github.com/wannasleepforlong/AmbedkarGPT-Intern-Task.git
 cd AmbedkarGPT-Intern-Task
 ```
 
@@ -156,3 +156,4 @@ User questions are embedded and compared against stored chunks using semantic si
 
 ### Answer Generation
 Retrieved chunks and the question are sent to Mistral 7B LLM with a prompt that instructs it to answer only from the provided context, preventing hallucinations.
+
