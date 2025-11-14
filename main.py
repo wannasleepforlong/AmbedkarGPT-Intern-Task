@@ -8,7 +8,6 @@ from langchain_huggingface import HuggingFaceEmbeddings
 
 VECTORDB_DIR = "./chroma_db"
 SPEECH_FILE = "speech.txt"
-llm = ChatOllama(model="mistral")
 
 def create_vectorstore():
     # embeddings = OllamaEmbeddings(model="mistral")
@@ -47,7 +46,10 @@ def create_vectorstore():
 
 def query_rag(vectorstore, query):
     print(f"{'='*60}")
+
     retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
+    llm = ChatOllama(model="mistral")
+    
     docs = retriever.invoke(query)
     print(f"Retrieved {len(docs)} relevant chunks")
     print("Generating answer with LLM...")
