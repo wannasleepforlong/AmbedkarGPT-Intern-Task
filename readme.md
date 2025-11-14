@@ -100,42 +100,12 @@ Subsequent runs load the vector database instantly.
 
 Type `quit`, `exit`, or `q` to exit the application.
 
-## Configuration
-
-### Adjusting Text Chunking
-
-Modify chunk parameters in `main.py`:
-
-```python
-text_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=200,      # Characters per chunk
-    chunk_overlap=20     # Overlap between chunks
-)
-```
-
-### Adjusting Retrieval
-
-Change number of chunks retrieved per query:
-
-```python
-retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
-```
-
-### Changing LLM Model
-
-Use a different Ollama model:
-
-```python
-llm = ChatOllama(model="llama2")
-```
 
 ## Example Questions
 
-1. What is the real remedy according to Ambedkar?
-2. What does Ambedkar say about the shastras?
-3. How does Ambedkar describe social reform?
-4. What is the real enemy according to the text?
-5. Can you have both caste and belief in shastras?
+1. What does Ambedkar say about the shastras?
+2. What is the real enemy according to the text?
+3. Can you have both caste and belief in shastras?
 
 ## How It Works
 
@@ -156,5 +126,6 @@ User questions are embedded and compared against stored chunks using semantic si
 
 ### Answer Generation
 Retrieved chunks and the question are sent to Mistral 7B LLM with a prompt that instructs it to answer only from the provided context, preventing hallucinations.
+
 
 
